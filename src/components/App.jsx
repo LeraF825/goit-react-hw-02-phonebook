@@ -20,8 +20,8 @@ export class App extends Component {
 
   addContact = (task) => {
     const searchSameName = this.state.contacts
-      .map((cont) => cont.name)
-      .includes(task.name);
+      .map((cont) => cont.name.toLowerCase())
+      .includes(task.name.toLowerCase());
 
     if (searchSameName) {
       alert(`${task.name} is already in contacts`);
